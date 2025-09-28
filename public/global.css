@@ -1,0 +1,142 @@
+:root {
+    --teal: rgb(35, 58, 68);
+    --pale-pink: rgb(244, 204, 202);
+    --mid-teal: rgb(35, 123, 132);
+    --pink: rgb(242, 155, 157);
+}
+
+.dawning-of-a-new-day-regular {
+  font-family: "Dawning of a New Day", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pink {
+    color: var(--pink);
+}
+
+.navbar {
+    background-color: var(--teal) !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    box-shadow: 5px 0 5px black;
+}
+
+.navbar-brand {
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    font-size: 2rem;
+}
+
+.nav-link {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.navbar-brand,
+.nav-link {
+    padding-left: 5px;
+    color: var(--pale-pink) !important;
+    cursor: pointer;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: var(--teal) !important;
+    background-color: var(--pale-pink) !important;
+}
+
+.navbar-toggler {
+    background-color: white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+body {
+    background-color: LavenderBlush;
+    color: var(--teal);
+}
+
+h1 {
+    display: block;
+    font-size: 75px;
+    /* text-decoration-line: underline; */
+    text-decoration-thickness: 2.5px;
+}
+
+h2 {
+    display: block;
+    font-size: 50px
+}
+
+a {
+    color: var(--teal)
+}
+
+#countdown {
+    font-size: 45px;
+}
+
+.input-group-text {
+    background-color: var(--teal);
+}
+
+.form-control,
+.form-control:focus {
+    color: black;
+    background-color: white;
+}
+
+.btn,
+.btn:hover {
+    border: none;
+    background-color: var(--teal);
+}
+
+footer-component {
+    margin-top: 10px;
+}
+
+img[src$="pearl.png"] {
+    width: 200px;
+    height: 200px;
+}
+
+img[src$="names.png"] {
+    width: 350px;
+    height: 150px;
+}
+
+@media (min-width: 576px) {
+    .navbar-brand {
+        padding-right: 40%;
+    }
+    #countdown {
+        font-size: 60px;
+    }
+    img[src$="pearl.png"] {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-brand {
+        padding-right: 60%;
+    }
+    #story {
+        width: 75%;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+        padding-right: 5px;
+    }
+    #story {
+        width: 50%;
+    }
+}
