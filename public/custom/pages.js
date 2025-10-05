@@ -5,7 +5,7 @@ export class Pages extends HTMLElement {
     const camelCase = /(?<=[a-z])[A-Z]/g;
     const snakeCase = className.replace(camelCase, m => '-' + m);
     return snakeCase.toLowerCase();
-  }
+  };
   constructor(pages = []){
     super();
 
@@ -40,12 +40,12 @@ export class Pages extends HTMLElement {
 
     navLinks.forEach((nav, i) => nav.addEventListener('click', () => Pages.carousel.to(i + 1)));
     innerRoot.children[0].classList.add('active');
-  }
+  };
   cloneTemplate(customTag){
     const template = document.getElementById(customTag);
     const templateClone = template.content.cloneNode(true);
     this.append(templateClone);
-  }
+  };
 };
 
 customElements.define('page-elements', Pages);
