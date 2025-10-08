@@ -68,4 +68,5 @@ node_modules/
 # dataconnect generated files
 .dataconnect
 
+# Mac-created tracking file
 .DS_Store
