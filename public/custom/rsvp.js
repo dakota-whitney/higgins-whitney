@@ -1,13 +1,12 @@
-import { Pages } from './custom.js';
+import { Pages } from './pages.js';
 
 export class RSVPPage extends Pages {
+    static title = Pages.title(this.name);
     static tag = 'rsvp-page';
     constructor(){
         super();
     };
     connectedCallback(){
-        this.cloneTemplate(RSVPPage.tag);
+        console.log(this.constructor.name + ' connected to DOM');
     };
 };
-
-customElements.define(RSVPPage.tag, RSVPPage);

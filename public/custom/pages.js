@@ -1,51 +1,32 @@
-export class Pages extends HTMLElement {
-  static root = document.querySelector('.carousel');
-  static carousel = bootstrap.Carousel.getOrCreateInstance(this.root);
+export class Pages {
   static tag(className){
     const camelCase = /(?<=[a-z])[A-Z]/g;
     const snakeCase = className.replace(camelCase, m => '-' + m);
     return snakeCase.toLowerCase();
   };
-  constructor(pages = []){
-    super();
+  static title(className){
+    const [title] = className.match(/[A-Z][a-z]+/);
+    return title;
+  };
+  constructor(navItems, pages){
+    this.root = document.querySelector('.carousel');
+    this.carousel = bootstrap.Carousel.getOrCreateInstance(this.root);
+    
+    const innerRoot = this.root.querySelector('.carousel-inner');
+    const templates = document.querySelectorAll('template[id$="page"]');
 
-    if(!pages.length) return;
-    else pages = new Map(pages);
-
-    const brand = document.querySelector('.navbar-brand');
-    const navBar = document.querySelector('ul.navbar-nav');
-    const innerRoot = Pages.root.querySelector('.carousel-inner');
-
-    for(const [title, page] of pages){
+    pages.forEach((page, i) => {
+      customElements.define(page.tag, page);
       const carouselPage = document.createElement(page.tag, {is: page.tag});
       carouselPage.classList.add('carousel-item');
+      carouselPage.append(templates[i].content.cloneNode(true));
       innerRoot.append(carouselPage);
+    });
     
-      if(page.name == 'HomePage'){
-        brand.innerText = title;
-        continue;
-      };
+    navItems[0].addEventListener('click', () => this.carousel.to(0));
+    navItems.slice(1).forEach((nav, i) => nav.addEventListener('click', () => this.carousel.to(i + 1)));
     
-      const pageNav = document.createElement('li');
-      pageNav.classList.add('nav-item');
-      pageNav.innerHTML = `<a class='nav-link' aria-current='page'>${title}</a>`;
-      navBar.append(pageNav);
-    };
-
-    const mobileSmall = window.matchMedia('(width < 300px)');
-    if(mobileSmall.matches) brand.innerText = 'C&D';
-    
-    brand.addEventListener('click', () => Pages.carousel.to(0));
-    const navLinks = [...navBar.children];
-
-    navLinks.forEach((nav, i) => nav.addEventListener('click', () => Pages.carousel.to(i + 1)));
     innerRoot.children[0].classList.add('active');
-  };
-  cloneTemplate(customTag){
-    const template = document.getElementById(customTag);
-    const templateClone = template.content.cloneNode(true);
-    this.append(templateClone);
+    return this.root;
   };
 };
-
-customElements.define('page-elements', Pages);
