@@ -30,20 +30,32 @@ export class HomePage extends HTMLElement {
     };
     countdown(){
         const now = new Date();
-        const passed = this.weddingDate <= now;
-        const diffs = {'Days': !passed ? (Math.floor((this.weddingDate - now) / 8.64e+7) - 1) : 0};
-
-        for(const time of ['Hours', 'Minutes', 'Seconds']){
-            const wTime = this.weddingDate[`get${time}`]();
-            const nTime = now[`get${time}`]();
-
-            const diffInt = time == 'Hours' ? 11 : 59;
-            diffs[time] = passed ? 0 : 
-                nTime >= wTime ? (wTime - nTime) + diffInt : 
-                time == 'Hours' ? (wTime - nTime) - 1 :
-                wTime - nTime;
+        const diffs = {
+            Days: 0,
+            Hours: 0,
+            Minutes: 0,
+            Seconds: 0
         };
 
+        if(this.weddingDate <= now) return diffs;
+        const difference = this.weddingDate - now;
+
+        diffs.Days = Math.floor(difference / (1000 * 3600 * 24));
+        diffs.Hours = this.timeDiff(now, 'Hours');
+        diffs.Minutes = this.timeDiff(now, 'Minutes');
+        diffs.Seconds = this.timeDiff(now, 'Seconds');
+
         return Object.entries(diffs);
+    };
+    timeDiff(now, unit){
+        const wUnit = this.weddingDate['get' + unit]();
+        const nUnit = now['get' + unit]();
+        let diff = wUnit - nUnit
+
+        if(unit == 'Hours') diff = diff < 0 ? diff + 24 : diff;
+        else if(unit == 'Minutes') diff = diff < 0 ? diff + 60 : diff;
+        else diff = diff <= 0 ? diff + 60 : diff;
+
+        return diff - 1;
     };
 };
