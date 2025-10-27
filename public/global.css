@@ -113,10 +113,6 @@ img[src$="names-date.png"] {
     background-color: var(--teal);
 }
 
-book-page {
-    margin-top: 175px;
-}
-
 .vstack > a.btn {
     width: 200px;
 }
@@ -179,5 +175,9 @@ footer {
     
     #story {
         width: 50%;
+    }
+
+    book-page {
+        margin-top: 175px;
     }
 }
