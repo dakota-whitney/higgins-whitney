@@ -53,7 +53,6 @@ export class HomePage extends HTMLElement {
         let diff = wUnit - nUnit
 
         if(unit == 'Hours') diff = diff < 0 ? diff + 24 : diff;
-        else if(unit == 'Minutes') diff = diff < 0 ? diff + 60 : diff;
         else diff = diff <= 0 ? diff + 60 : diff;
 
         return diff - 1;

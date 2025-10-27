@@ -19,7 +19,6 @@
     background-color: var(--teal) !important;
     padding-top: 0;
     padding-bottom: 0;
-    /* margin-bottom: 20px; */
     box-shadow: 5px 0 5px black;
 }
 
@@ -66,24 +65,16 @@ body {
 }
 
 .page-header {
-    margin-top: 20px;
-}
-
-h1 {
-    font-size: 50px;
-}
-
-.page-header {
     margin-bottom: 20px;
     display: block;
     font-size: 60px;
     text-decoration-line: underline;
     text-decoration-thickness: 2.5px;
+    margin-top: 20px;
 }
 
-h2 {
-    display: block;
-    font-size: 50px
+h1, h2 {
+    font-size: 40px;
 }
 
 a {
@@ -102,7 +93,8 @@ img[src$="names-date.png"] {
 #countdown {
     display: grid;
     grid-template-columns: auto auto;
-    font-size: 45px;
+    justify-content: center;
+    font-size: 40px;
 }
 
 .input-group-text {
@@ -148,13 +140,13 @@ footer {
     .navbar-brand {
         padding-right: 40%;
     }
+    
+    h1, h2, #countdown {
+        font-size: 40px;
+    }
+
     #countdown {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        font-size: 50px;
-        margin-top: 20px;
+        font-size: 40px;
     }
 }
 
@@ -162,8 +154,13 @@ footer {
     .navbar-brand {
         padding-right: 60%;
     }
+
     #story {
         width: 75%;
+    }
+
+    h1, h2, #countdown {
+        font-size: 50px;
     }
 }
 
@@ -171,6 +168,15 @@ footer {
     .navbar-brand {
         padding-right: 5px;
     }
+
+    #countdown {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
     #story {
         width: 50%;
     }
