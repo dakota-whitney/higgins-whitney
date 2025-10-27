@@ -43,7 +43,7 @@
   <body>
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand dawning-of-a-new-day-regular">Dakota & Corinne</a>
+        <a class="navbar-brand dawning-of-a-new-day-regular">Corinne & Dakota</a>
         <button 
           class="navbar-toggler" 
           type="button" 
@@ -92,72 +92,83 @@
 
     <template id="home-page">
       <div class="container">
-        <div class="d-flex flex-column justify-content-center align-items-center gap-3">
-          <img
-            src="images/names-date.png"
-            alt="Wedding date"
-            class="img-fluid"
-            width="1000"
-            height="500"/>
-          <div 
-            id="countdown" 
-            class="gap-3 dawning-of-a-new-day-regular">
+        <div class="d-flex flex-row flex-wrap justify-content-center align-items-center gap-1">
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <img
+              src="images/names-date.png"
+              alt="Wedding date"
+              class="img-fluid"
+              width="750"
+              height="150"
+            />
+            <h1 class="dawning-of-a-new-day-regular">Guests arrive at 5pm</h1>
+            <h2 class="dawning-of-a-new-day-regular" style="color: var(--mid-teal)">Reception to follow</h2>
           </div>
-          <h1 class="dawning-of-a-new-day-regular">Ceremony at 5pm</h1>
-          <h2 class="dawning-of-a-new-day-regular">Reception to follow</h2>
-          <br />
-          <br />
-          <h2 class="dawning-of-a-new-day-regular">Location:</h2>
-          <a class="d-flex flex-column lead" href="https://www.waveresort.com/", target="_blank">
-            <span class="lead">The Wave Resort & Spa</span>
-            <span>110 Ocean Ave, Long Branch, NJ 07740</span>
-          </a>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <img
+              src="gallery/IMG_7032.jpg"
+              alt="Engagement photo"
+              class="img-fluid"
+              width="400"
+              height="400"
+            />
+          </div>
         </div>
+        <div 
+          id="countdown" 
+          class="gap-3 dawning-of-a-new-day-regular">
+        </div>
+      </div>
     </template>
 
     <template id="story-page">
       <div class="container d-flex flex-column justify-content-center align-items-center text-start">
         <h1 class="page-header dawning-of-a-new-day-regular">Our Story</h1>
-        <img src="gallery/IMG_7032.jpg" class="img-fluid" width=400 height=500 />
+        <img src="gallery/IMG_3305.jpg" class="img-fluid" width=400 height=500 />
         <div id="story" class="lead"></div>
       </div>
     </template>
 
     <template id="gallery-page">
       <div class="container text-center">
-        <h1 class="page-header dawning-of-a-new-day-regular">Gallery</h1>
+        <h1 class="page-header dawning-of-a-new-day-regular">Photos</h1>
         <div id="gallery" class="d-flex flex-wrap justify-content-center gap-3"></div>
+      </div>
+    </template>
+
+    <template id="location-page">
+      <div class="container vstack gap-3 d-flex flex-column justify-content-center align-items-center text-center">
+        <h1 class="page-header dawning-of-a-new-day-regular">Location</h1>
+        <a class="d-flex flex-column lead" href="https://www.waveresort.com/", target="_blank">
+          <span class="lead">The Wave Resort & Spa</span>
+          <span>110 Ocean Ave, Long Branch, NJ 07740</span>
+        </a>
+        <span>Check In: Sat, Oct 10, 2026 | Check Out: Sun, Oct 11, 2026</span>
+        <a target="_blank" class="btn btn-primary">Book Here</a>
+        <span>For additional nights or other questions, call <a href="tel:+7326129283">(732) 612-9283</a> and select option 2 for group sales</span>
       </div>
     </template>
 
     <template id="rsvp-page">
       <div class="container">
-        <h1 class="dawning-of-a-new-day-regular">RSVP</h1>
+        <h1 class="page-header dawning-of-a-new-day-regular">RSVP</h1>
         <form>
           <div class="input-group mb-3">
             <span class="input-group-text">Name:</span>
             <input type="text" class="form-control" />
           </div>
           <div class="input-group mb-3">
-            <span class="input-group-text">Email:</span>
-            <input type="email" class="form-control" />
+            <span class="input-group-text">Plus 1:</span>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Food option:</span>
+            <input type="text" class="form-control" />
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </template>
-
-    <!-- <template id="footer-component">
-      <footer class="container-fluid d-flex justify-content-center">
-        <img
-          src="images/pearl.png" 
-          class="img-fluid"/>
-        <img
-          src="images/names.png" 
-          class="img-fluid"
-          style="display:none;"/>
-      </footer>
-    </template> -->
 
     <script 
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
@@ -173,42 +184,39 @@
 
     <script src="index.js" type="module"></script>
 
-    <script>
+    <!-- <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        const loadEl = document.querySelector('#load');
 
-        // try {
-        //   let app = firebase.app();
-        //   console.log(typeof app['database']);
-        //   let features = [
-        //     'auth', 
-        //     'database', 
-        //     'firestore',
-        //     'functions',
-        //     'messaging', 
-        //     'storage', 
-        //     'analytics', 
-        //     'remoteConfig',
-        //     'performance',
-        //   ].filter(feature => typeof app[feature] === 'function');
-        // } catch (e) {
-        //   console.error(e);
-        // }
+        // // The Firebase SDK is initialized and available here!
+        firebase.auth().onAuthStateChanged(user => { });
+        firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        firebase.firestore().doc('/foo/bar').get().then(() => { });
+        firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        firebase.messaging().requestPermission().then(() => { });
+        firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        firebase.analytics(); // call to activate
+        firebase.analytics().logEvent('tutorial_completed');
+        firebase.performance(); // call to activate
+
+        try {
+          let app = firebase.app();
+          console.log(typeof app['database']);
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+        } catch (e) {
+          console.error(e);
+        }
       });
-    </script>
+    </script> -->
   </body>
 </html>

@@ -1,7 +1,7 @@
 import { Pages } from './pages.js';
 
 export class RSVPPage extends Pages {
-    static title = Pages.title(this.name);
+    static title = 'RSVP';
     static tag = 'rsvp-page';
     constructor(){
         super();
