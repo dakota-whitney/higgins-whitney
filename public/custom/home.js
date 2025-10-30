@@ -5,7 +5,7 @@ export class HomePage extends HTMLElement {
     static tag = Pages.tag(this.name);
     constructor(){
         super();
-        this.weddingDate = new Date('October 10, 2026 05:00:00 PM');
+        this.weddingDate = new Date('October 10, 2026 05:30:00 PM');
     };
     connectedCallback(){
         console.log(this.constructor.name + ' connected to DOM');
@@ -52,7 +52,7 @@ export class HomePage extends HTMLElement {
         const nUnit = now['get' + unit]();
         let diff = wUnit - nUnit
 
-        if(unit == 'Hours') diff = diff < 0 ? diff + 24 : diff;
+        if(unit == 'Hours') diff = diff <= 0 ? diff + 24 : diff;
         else diff = diff <= 0 ? diff + 60 : diff;
 
         return diff - 1;
