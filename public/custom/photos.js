@@ -9,7 +9,7 @@ export class PhotosPage extends HTMLElement {
             'IMG_2071.jpg', 'IMG_2096.jpg',
             'IMG_2144.jpg', 'IMG_2297.jpg',
             'IMG_2805.jpg', 'IMG_3653.jpg',
-            'IMG_4095.jpg', 'IMG_4104.jpg',
+            'IMG_4095.jpg',
             'IMG_4671.jpg', 'IMG_4835.jpg',
             'IMG_5802.jpg', 'IMG_5927.jpg',
             'IMG_5962.jpg', 'IMG_6210.jpg',
