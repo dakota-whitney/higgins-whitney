@@ -128,7 +128,6 @@ img[src$="names.png"] {
     height: 125px;
 }
 
-location-page,
 registry-page {
     margin-top: 40%;
 }
@@ -150,7 +149,6 @@ footer {
         font-size: 40px;
     }
 
-    location-page,
     registry-page {
         margin-top: 30%;
     }
@@ -169,7 +167,6 @@ footer {
         font-size: 50px;
     }
 
-    location-page,
     registry-page {
         margin-top: 20%;
     }
