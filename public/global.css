@@ -128,6 +128,11 @@ img[src$="names.png"] {
     height: 125px;
 }
 
+location-page,
+registry-page {
+    margin-top: 40%;
+}
+
 footer {
     margin-top: 50px;
 }
@@ -144,6 +149,11 @@ footer {
     #countdown {
         font-size: 40px;
     }
+
+    location-page,
+    registry-page {
+        margin-top: 30%;
+    }
 }
 
 @media (min-width: 768px) {
@@ -157,6 +167,11 @@ footer {
 
     h1, h2, #countdown {
         font-size: 50px;
+    }
+
+    location-page,
+    registry-page {
+        margin-top: 20%;
     }
 }
 
@@ -177,7 +192,8 @@ footer {
         width: 50%;
     }
 
-    book-page {
-        margin-top: 175px;
+    location-page,
+    registry-page {
+        margin-top: 10%;
     }
 }

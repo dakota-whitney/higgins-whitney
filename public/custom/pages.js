@@ -1,8 +1,8 @@
 export class Pages {
   static tag(className){
     const camelCase = /(?<=[a-z])[A-Z]/g;
-    const snakeCase = className.replace(camelCase, m => '-' + m);
-    return snakeCase.toLowerCase();
+    const dashCase = className.replace(camelCase, m => '-' + m);
+    return dashCase.toLowerCase();
   };
   static title(className){
     const [title] = className.match(/[A-Z][a-z]+/);
@@ -27,6 +27,5 @@ export class Pages {
     navItems.slice(1).forEach((nav, i) => nav.addEventListener('click', () => this.carousel.to(i + 1)));
     
     innerRoot.children[0].classList.add('active');
-    return this.root;
   };
 };

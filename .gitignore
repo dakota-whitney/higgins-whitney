@@ -70,3 +70,6 @@ node_modules/
 
 # Mac-created tracking file
 .DS_Store
+
+#RSVP Page
+public/custom/rsvp.js
