@@ -1,6 +1,30 @@
-import { Pages } from './pages.js';
+// Define LocationPage custom element
+// Add static title and tag variables for use in NavBar
+export class LocationPage extends HTMLElement {
+    static title = "Location";
+    static tag = "location-page";
 
-const bookParams = new URLSearchParams([
+    // Define custom element constructor
+    constructor(){
+        super();
+    };
+
+    /**
+     * Define function when element is appended to main DOM
+     * Set each inner anchor tag's text and hrefs using defined hotel object
+     */
+    connectedCallback(){
+        console.log(this.constructor.name + " connected to DOM");
+        const links = [...this.querySelectorAll("a")];
+        Object.entries(hotel).forEach(([text, href], i) => {
+            links[i].href = href;
+            links[i].innerText = text;
+        });
+    };
+};
+
+// Define URL parameters for hotel booking URL
+const hotelParams = new URLSearchParams([
     ["adult", 1],
     ["arrive", "2026-10-10"],
     ["chain", 8708],
@@ -15,23 +39,10 @@ const bookParams = new URLSearchParams([
     ["rooms", 1]
 ]);
 
-export class LocationPage extends HTMLElement {
-    static title = Pages.title(this.name);
-    static tag = Pages.tag(this.name);
-        constructor(){
-        super();
-        this.hotel = {
-            "The Wave Resort & Spa": new URL("https://www.waveresort.com/"),
-            "Book Here": new URL("https://be.synxis.com/?" + bookParams.toString()),
-            "(732) 612-9283": "tel:+7326129283"
-        };
-    };
-    connectedCallback(){
-        console.log(this.constructor.name + ' connected to DOM');
-        const links = [...this.querySelectorAll("a")];
-        Object.entries(this.hotel).forEach(([text, href], i) => {
-            links[i].href = href;
-            links[i].innerText = text;
-        });
-    };
+// Define hotel URLs for each achor tag in template
+// Keys are the anchor tag text, values are the hrefs
+const hotel = {
+    "The Wave Resort & Spa": new URL("https://www.waveresort.com/"),
+    "Book Here": new URL("https://be.synxis.com/?" + hotelParams.toString()),
+    "(732) 612-9283": "tel:+7326129283"
 };

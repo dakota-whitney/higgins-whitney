@@ -17,9 +17,6 @@
 
 .navbar {
     background-color: var(--teal) !important;
-    padding-top: 0;
-    padding-bottom: 0;
-    box-shadow: 5px 0 5px black;
 }
 
 .navbar-brand {
@@ -46,17 +43,8 @@
     background-color: var(--pale-pink) !important;
 }
 
-.navbar-toggler {
-    background-color: white;
-}
-
 .navbar-toggler:focus {
     box-shadow: none;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    position: fixed;
 }
 
 body {
@@ -66,9 +54,7 @@ body {
 
 .page-header {
     margin-bottom: 20px;
-    display: block;
     font-size: 60px;
-    text-decoration-line: underline;
     text-decoration-thickness: 2.5px;
     margin-top: 20px;
 }
@@ -91,9 +77,6 @@ img[src$="names-date.png"] {
 }
 
 #countdown {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
     font-size: 40px;
 }
 
@@ -101,11 +84,11 @@ img[src$="names-date.png"] {
     background-color: var(--teal);
 }
 
-.form-control,
+/* .form-control,
 .form-control:focus {
     color: black;
     background-color: white;
-}
+} */
 
 .btn,
 .btn:hover {
@@ -145,10 +128,6 @@ footer {
         font-size: 40px;
     }
 
-    #countdown {
-        font-size: 40px;
-    }
-
     registry-page {
         margin-top: 30%;
     }
@@ -175,14 +154,6 @@ footer {
 @media (min-width: 992px) {
     .navbar-brand {
         padding-right: 5px;
-    }
-
-    #countdown {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 20px;
     }
     
     #story {
